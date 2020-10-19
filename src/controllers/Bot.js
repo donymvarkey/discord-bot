@@ -68,6 +68,21 @@ const initBot = (token) => {
             const timeTaken = Date.now() - message.createdTimestamp;
             message.reply(`Pong! This message had a latency of ${timeTaken}ms.`);
         }
+
+        if (command === 'commands') {
+            const availableCommands = new Discord.MessageEmbed()
+            .setColor('GREEN')
+            .setTitle('Available Commands')
+            .addFields(
+                { name: '!ping', value: 'Check your latency'  },
+                { name: '!info', value: 'Returns the info of the member' },
+                { name: '!server', value: 'Displays the info about the server' },
+                { name: '!link', value: 'Returns the Discord joining link for the server' },
+                { name: '!commands', value: 'Displays all the available commands' }
+            )
+
+            message.reply(availableCommands)
+        }
     })
 
     client.login(BOT_TOKEN)
