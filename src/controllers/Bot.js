@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
-const {BOT_TOKEN, prefix} = require('../../config.json');
 
+const initBot = (token) => {
 
-const initBot = () => {
+    const BOT_TOKEN = token;
     const client = new Discord.Client();
 
     client.on('guildMemberAdd', member => {

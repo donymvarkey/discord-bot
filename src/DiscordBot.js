@@ -48,7 +48,7 @@ class DiscordBot{
     }
 
     async mountRoutes(){
-        initBot();
+        initBot(this.options.token);
         return true;
     }
     /**

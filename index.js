@@ -1,10 +1,12 @@
 
 const DiscordBot = require('./src/DiscordBot');
-const defaults = require('./src/defaults')
+const dontenv = require('dotenv')
+dontenv.config();
 
 const options ={
-    port :  5000,
-    signature: defaults.signature
+    port :  process.env.PORT,
+    signature: process.env.SIGNATURE,
+    token: process.env.BOT_TOKEN
 }
 
 app = new DiscordBot(options);
