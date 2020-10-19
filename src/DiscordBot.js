@@ -30,10 +30,11 @@ class DiscordBot{
         api.use(cors()); //allow cross domain requesting of urls
 
         //url to check health of server
-        api.use('/health',function(req,res){
+        api.use('/',function(req,res){
 
             res.json({
-                health : true
+                health : true,
+                message: 'Server running fine. No worries!!!'
             });
 
         });
